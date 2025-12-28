@@ -1,0 +1,118 @@
+/* style.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.dashboard-container {
+    background-color: #2c2c2c;
+    border: 3px solid #ff4500; /* لون برتقالي ناري */
+    border-radius: 15px;
+    padding: 30px;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 0 25px rgba(255, 69, 0, 0.5);
+}
+
+header h1 {
+    color: #ff4500;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    text-shadow: 0 0 10px rgba(255, 69, 0, 0.8);
+}
+
+.section-title {
+    color: #00ff99; /* لون أخضر نيون */
+    border-bottom: 2px solid #00ff99;
+    padding-bottom: 5px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.control-panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.control-button {
+    background-color: #444444;
+    color: #f0f0f0;
+    border: none;
+    padding: 15px 10px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s, box-shadow 0.3s;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.control-button:hover {
+    background-color: #555555;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ألوان خاصة للأزرار */
+#start-btn {
+    background-color: #00cc66; /* أخضر للبدء */
+}
+#start-btn:hover {
+    background-color: #00e673;
+    box-shadow: 0 0 15px rgba(0, 204, 102, 0.7);
+}
+
+#emote-btn-1 {
+    background-color: #ff6600; /* برتقالي للرقصات */
+}
+#emote-btn-1:hover {
+    background-color: #ff8533;
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.7);
+}
+
+#emote-btn-2 {
+    background-color: #cc0000; /* أحمر للرقصات */
+}
+#emote-btn-2:hover {
+    background-color: #e60000;
+    box-shadow: 0 0 15px rgba(204, 0, 0, 0.7);
+}
+
+.log-box {
+    background-color: #111111;
+    border: 1px solid #444444;
+    padding: 15px;
+    height: 150px;
+    overflow-y: scroll;
+    border-radius: 5px;
+    font-size: 0.9em;
+    color: #aaaaaa;
+}
+
+.log-entry {
+    margin-bottom: 5px;
+}
+
+.log-success {
+    color: #00ff99;
+}
+
+.log-error {
+    color: #ff4500;
+}
+
+/* محاكاة بسيطة لعمل البوت */
+.log-box::before {
+    content: "2025-12-29 14:30:01 - [SYSTEM] Dashboard Initialized.\A2025-12-29 14:30:05 - [BOT] Connection Established to Free Fire API (Simulated).\A2025-12-29 14:30:10 - [USER] Command: Start Game.\A2025-12-29 14:30:11 - [SUCCESS] Game Started Successfully. Waiting for lobby.\A2025-12-29 14:30:20 - [USER] Command: Emote 1.\A2025-12-29 14:30:21 - [SUCCESS] Emote 'Dab' Executed.";
+    white-space: pre;
+}
