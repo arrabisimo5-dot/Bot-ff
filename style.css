@@ -1,118 +1,113 @@
-/* style.css */
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #1a1a1a;
-    color: #f0f0f0;
-    margin: 0;
-    padding: 0;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
 }
 
-.dashboard-container {
-    background-color: #2c2c2c;
-    border: 3px solid #ff4500; /* لون برتقالي ناري */
-    border-radius: 15px;
-    padding: 30px;
-    width: 90%;
-    max-width: 800px;
-    box-shadow: 0 0 25px rgba(255, 69, 0, 0.5);
+.container {
+    width: 360px;
+    background: rgba(0,0,0,0.6);
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 0 40px rgba(0,255,180,0.3);
 }
 
-header h1 {
-    color: #ff4500;
+h1 {
     text-align: center;
-    margin-bottom: 20px;
-    font-size: 2.5em;
-    text-shadow: 0 0 10px rgba(255, 69, 0, 0.8);
-}
-
-.section-title {
-    color: #00ff99; /* لون أخضر نيون */
-    border-bottom: 2px solid #00ff99;
-    padding-bottom: 5px;
-    margin-top: 25px;
-    margin-bottom: 15px;
-    font-size: 1.5em;
-}
-
-.control-panel {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-}
-
-.control-button {
-    background-color: #444444;
-    color: #f0f0f0;
-    border: none;
-    padding: 15px 10px;
-    border-radius: 8px;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.1s, box-shadow 0.3s;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-.control-button:hover {
-    background-color: #555555;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* ألوان خاصة للأزرار */
-#start-btn {
-    background-color: #00cc66; /* أخضر للبدء */
-}
-#start-btn:hover {
-    background-color: #00e673;
-    box-shadow: 0 0 15px rgba(0, 204, 102, 0.7);
-}
-
-#emote-btn-1 {
-    background-color: #ff6600; /* برتقالي للرقصات */
-}
-#emote-btn-1:hover {
-    background-color: #ff8533;
-    box-shadow: 0 0 15px rgba(255, 102, 0, 0.7);
-}
-
-#emote-btn-2 {
-    background-color: #cc0000; /* أحمر للرقصات */
-}
-#emote-btn-2:hover {
-    background-color: #e60000;
-    box-shadow: 0 0 15px rgba(204, 0, 0, 0.7);
-}
-
-.log-box {
-    background-color: #111111;
-    border: 1px solid #444444;
-    padding: 15px;
-    height: 150px;
-    overflow-y: scroll;
-    border-radius: 5px;
-    font-size: 0.9em;
-    color: #aaaaaa;
-}
-
-.log-entry {
+    color: #00ffb3;
     margin-bottom: 5px;
 }
 
-.log-success {
-    color: #00ff99;
+.subtitle {
+    text-align: center;
+    font-size: 0.8em;
+    color: #aaa;
+    margin-bottom: 20px;
 }
 
-.log-error {
-    color: #ff4500;
+.card {
+    background: #111;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 20px;
 }
 
-/* محاكاة بسيطة لعمل البوت */
-.log-box::before {
-    content: "2025-12-29 14:30:01 - [SYSTEM] Dashboard Initialized.\A2025-12-29 14:30:05 - [BOT] Connection Established to Free Fire API (Simulated).\A2025-12-29 14:30:10 - [USER] Command: Start Game.\A2025-12-29 14:30:11 - [SUCCESS] Game Started Successfully. Waiting for lobby.\A2025-12-29 14:30:20 - [USER] Command: Emote 1.\A2025-12-29 14:30:21 - [SUCCESS] Emote 'Dab' Executed.";
-    white-space: pre;
+label {
+    font-size: 0.85em;
+    color: #bbb;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: #222;
+    color: #fff;
+}
+
+button {
+    margin-top: 12px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background: #00ffb3;
+    font-weight: bold;
+    cursor: pointer;
+    color: #000;
+}
+
+button:hover {
+    background: #00e6a3;
+}
+
+.xp-card h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.xp-bar {
+    background: #333;
+    height: 14px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.xp-fill {
+    width: 75%;
+    height: 100%;
+    background: linear-gradient(90deg, #00ffb3, #00ccff);
+    animation: glow 2s infinite;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px #00ffb3; }
+    50% { box-shadow: 0 0 15px #00ffb3; }
+    100% { box-shadow: 0 0 5px #00ffb3; }
+}
+
+.xp-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 0.85em;
+    color: #ccc;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.7em;
+    color: #666;
+    margin-top: 10px;
 }
