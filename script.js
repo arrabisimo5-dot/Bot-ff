@@ -10,13 +10,8 @@ slider.addEventListener("mousedown", (e) => {
   scrollLeft = slider.scrollLeft;
 });
 
-slider.addEventListener("mouseleave", () => {
-  isDown = false;
-});
-
-slider.addEventListener("mouseup", () => {
-  isDown = false;
-});
+slider.addEventListener("mouseleave", () => isDown = false);
+slider.addEventListener("mouseup", () => isDown = false);
 
 slider.addEventListener("mousemove", (e) => {
   if (!isDown) return;
