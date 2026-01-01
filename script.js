@@ -1,4 +1,3 @@
-// 💰 التحكم في الثمن (غير هنا)
 const PRICES = {
   monthly: "95 MAD",
   weekly: "25 MAD",
@@ -10,12 +9,9 @@ const PRICES = {
 };
 
 window.addEventListener("load", () => {
-  // Hide loader
   document.getElementById("loader").style.display = "none";
 
-  // Apply prices
   document.querySelectorAll(".price").forEach(el => {
-    const key = el.dataset.price;
-    el.textContent = PRICES[key] || "غير متوفر";
+    el.textContent = PRICES[el.dataset.price] || "غير متوفر";
   });
 });
