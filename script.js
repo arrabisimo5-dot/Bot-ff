@@ -1,21 +1,21 @@
-const slider = document.getElementById("slider");
+// 💰 التحكم في الثمن (غير هنا)
+const PRICES = {
+  monthly: "95 MAD",
+  weekly: "25 MAD",
+  booyah: "20 MAD",
+  prime1: "X MAD",
+  prime2: "X MAD",
+  prime3: "X MAD",
+  prime4: "20 MAD"
+};
 
-let isDown = false;
-let startX;
-let scrollLeft;
+window.addEventListener("load", () => {
+  // Hide loader
+  document.getElementById("loader").style.display = "none";
 
-slider.addEventListener("mousedown", e => {
-  isDown = true;
-  startX = e.pageX - slider.offsetLeft;
-  scrollLeft = slider.scrollLeft;
-});
-
-slider.addEventListener("mouseleave", () => isDown = false);
-slider.addEventListener("mouseup", () => isDown = false);
-
-slider.addEventListener("mousemove", e => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - slider.offsetLeft;
-  slider.scrollLeft = scrollLeft - (x - startX) * 2;
+  // Apply prices
+  document.querySelectorAll(".price").forEach(el => {
+    const key = el.dataset.price;
+    el.textContent = PRICES[key] || "غير متوفر";
+  });
 });
